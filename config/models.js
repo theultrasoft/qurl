@@ -53,7 +53,7 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
 
-  // migrate: 'alter',
+  migrate: 'alter',
 
 
   /***************************************************************************
@@ -118,7 +118,13 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
 
-  cascadeOnDestroy: true
+  cascadeOnDestroy: true,
 
 
+
+  /**
+   * Fix for auto-reload bug with models
+   * See: https://github.com/sgress454/sails-hook-autoreload/issues/84
+   */
+  archiveModelIdentity: false
 };
